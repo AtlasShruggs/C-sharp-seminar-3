@@ -13,4 +13,23 @@ if (exNum == 19)
     if (str == newStr)
     {Console.WriteLine("Палиндром");}
     }
-//else if (exNum ==)
+else if (exNum == 21)
+{
+    Console.WriteLine("Введите координаты точки А в формате 1,2,3");
+    string[] arrA = Console.ReadLine().Split(',');
+    float[] coordsA = new float[3];
+    for (int _ = 0, i = 0; _ < arrA.Length; _++)
+    {
+        Console.WriteLine(arrA[_]);
+        try
+        {
+            coordsA[i] = float.Parse(arrA[_]);
+            i++;
+        }
+        catch
+        {
+            continue;
+        }
+    }
+    Console.WriteLine(coordsA[0] + coordsA[1] + coordsA[2]);
+}
