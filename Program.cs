@@ -17,13 +17,13 @@ else if (exNum == 21)
 {
     Console.WriteLine("Введите координаты точки А в формате 1,2,3");
     string[] arrA = Console.ReadLine().Split(',');
-    float[] coordsA = new float[3];
+    double[] coordsA = new double[3];
     for (int _ = 0, i = 0; _ < arrA.Length; _++)
     {
         Console.WriteLine(arrA[_]);
         try
         {
-            coordsA[i] = float.Parse(arrA[_]);
+            coordsA[i] = double.Parse(arrA[_], System.Globalization.CultureInfo.InvariantCulture);
             i++;
         }
         catch
@@ -31,5 +31,28 @@ else if (exNum == 21)
             continue;
         }
     }
-    Console.WriteLine(coordsA[0] + coordsA[1] + coordsA[2]);
+    Console.WriteLine();
+    Console.WriteLine("Введите координаты точки B в формате 1,2,3");
+    string[] arrB = Console.ReadLine().Split(',');
+    double[] coordsB = new double[3];
+    for (int _ = 0, i = 0; _ < arrA.Length; _++)
+    {
+        Console.WriteLine(arrB[_]);
+        try
+        {
+            coordsB[i] = double.Parse(arrB[_], System.Globalization.CultureInfo.InvariantCulture);
+            i++;
+        }
+        catch
+        {
+            continue;
+        }
+    }
+    double summ = 0;
+    for (int _ = 0; _ < 3; _++)
+    {
+        summ += Math.Pow((coordsA[_] - coordsB[_]), 2);
+    }
+    Console.WriteLine();
+    Console.WriteLine(Math.Sqrt(summ));
 }
