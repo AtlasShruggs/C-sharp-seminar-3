@@ -1,6 +1,8 @@
-﻿Console.WriteLine("Введите номер задачи");
-
-int exNum = int.Parse(Console.ReadLine());
+﻿while (true)
+{   Console.WriteLine();
+    Console.WriteLine("Введите номер задачи");
+try
+{int exNum = int.Parse(Console.ReadLine());
 
 if (exNum == 19)
     {
@@ -11,7 +13,11 @@ if (exNum == 19)
     Array.Reverse(arr);
     string newStr = new string(arr); 
     if (str == newStr)
-    {Console.WriteLine("Палиндром");}
+        {Console.WriteLine("Палиндром");}
+    else
+    {
+        Console.WriteLine("Не палиндром");
+    }
     }
 else if (exNum == 21)
 {
@@ -55,4 +61,27 @@ else if (exNum == 21)
     }
     Console.WriteLine();
     Console.WriteLine(Math.Sqrt(summ));
+}
+else if (exNum == 23)
+{
+    void cubes(int n)
+    {
+        for (double i = 1; i <= n; i++)
+        {
+            Console.WriteLine(Math.Pow(i, 3));
+        }
+
+    }
+    Console.WriteLine("Введите число");
+    cubes(int.Parse(Console.ReadLine()));
+}
+else
+{
+    Console.WriteLine("Нет такой задачи");
+}
+}
+catch
+{
+    Console.WriteLine("Вместо числа вы вводите какую-то дичь");
+}
 }
